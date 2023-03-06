@@ -1,0 +1,68 @@
+.list {
+  border-radius: 16px;
+  background-color: #13161d;
+}
+
+.stickyRow {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  z-index: 2;
+  color: #8c8988;
+  padding: 17px 24px 20px 28px;
+  background-color: #13161d;
+  width: fit-content !important;
+  min-width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 260px 140px 250px 90px 150px 100px 165px;
+  align-items: center;
+}
+
+.rowWrapper {
+  padding-bottom: 8px;
+  width: fit-content !important;
+  min-width: 100%;
+}
+
+.row {
+  background-color: #181b22;
+  border: 1px solid rgba(207, 123, 90, 0.2);
+  border-radius: 12px;
+  margin: 0 12px;
+  color: #dcd8d3;
+  padding: 15px;
+
+  div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+  }
+
+  .userPreview {
+    display: flex;
+    align-items: center;
+  }
+
+  .userAvatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+}
+
+.notFound {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 40px;
+}
+
+.loader {
+  z-index: 2;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}

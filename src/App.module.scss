@@ -1,0 +1,92 @@
+.wrapper {
+  background: rgba(30, 32, 39, 0.7);
+  border: 1px solid rgba(207, 123, 90, 0.2);
+  border-radius: 40px;
+  padding: 20px;
+}
+
+.searchInput {
+  max-width: 100%;
+  width: 305px;
+  height: 60px;
+}
+
+.filters {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gendersSelect {
+  width: fit-content;
+  margin-right: 8px;
+}
+
+.nationalitiesSelect {
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.table {
+  margin-top: 24px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amountPerPageSelect {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+.amountPerPageSelectText {
+  font-size: 14px;
+  line-height: 18px;
+  color: #dcd8d3;
+  margin-right: 16px;
+}
+
+@media (min-width: 576px) {
+  .filters {
+    flex-direction: row;
+  }
+
+  .nationalitiesSelect {
+    margin-top: 0;
+  }
+
+  .footer {
+    flex-direction: row;
+  }
+
+  .amountPerPageSelect {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 40px;
+  }
+
+  .footer {
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .pagination {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

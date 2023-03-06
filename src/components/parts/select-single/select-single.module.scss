@@ -1,0 +1,65 @@
+.selectWrapper {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.button {
+  font-size: 14px;
+  line-height: 18px;
+  color: #8c8988;
+  border-radius: 40px;
+  background-color: #13161d;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.buttonSelectedOption {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.buttonClear {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+/* cross */
+.buttonClear::before,
+.buttonClear::after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  display: block;
+  width: 13px;
+  height: 2px;
+  background: #8c8988;
+}
+
+.buttonClear::before {
+  transform: rotate(45deg);
+}
+
+.buttonClear::after {
+  transform: rotate(-45deg);
+}
+/* /cross */
+
+/* arrow */
+.buttonArrow {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid #dcd8d3;
+  border-right: 1px solid #dcd8d3;
+  transform: rotate(135deg);
+  margin-bottom: 3px;
+  margin-left: 4px;
+}
+/* /arrow */

@@ -1,0 +1,49 @@
+.pagination {
+  display: flex;
+  color: #dcd8d3;
+  font-size: 14px;
+  line-height: 18px;
+  align-items: center;
+}
+
+.text {
+  display: flex;
+  margin: 0 20px;
+  width: 50px;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: #181b22;
+  border: 1px solid #303238;
+  box-shadow: inset 0px 4px 12px -4px rgba(121, 118, 117, 0.7);
+  border-radius: 40px;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid #797675;
+    border-right: 1px solid #797675;
+  }
+}
+
+.buttonLeft {
+  &::after {
+    transform: rotate(-135deg);
+    left: 15px;
+  }
+}
+
+.buttonRight {
+  &::after {
+    transform: rotate(45deg);
+    left: 12px;
+  }
+}
