@@ -1,7 +1,8 @@
-import { FC, useState, MouseEventHandler, memo, useMemo } from "react";
+import { FC, useState, MouseEventHandler, memo, useMemo, useRef } from "react";
 import Select, { SingleValue, ActionMeta } from "react-select";
 
 import { MenuList } from "./custom-select-parts";
+import useOnClickOutside from "hooks/useClickOutside";
 
 import { IOption, IFilterOption } from "constants/types/form-parts.type";
 
@@ -27,6 +28,8 @@ const SelectSingle: FC<ISelectSingle> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const wrapperRef = useRef(null);
+
   const onClickButton = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -41,6 +44,8 @@ const SelectSingle: FC<ISelectSingle> = ({
     changeHandler("");
   };
 
+  useOnClickOutside(isOpen, wrapperRef, onClickButton);
+
   const formatedSelectOptions = useMemo(() => {
     if (!value) return options;
 
@@ -53,7 +58,7 @@ const SelectSingle: FC<ISelectSingle> = ({
   }, [value, options]);
 
   return (
-    <div className={styles.selectWrapper}>
+    <div className={styles.selectWrapper} ref={wrapperRef}>
       <button className={styles.button} onClick={onClickButton}>
         <span>{title} </span>
         {value && value.label && (
