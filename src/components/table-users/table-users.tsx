@@ -4,6 +4,7 @@ import { innerElementType, StickyList, Row } from "./table-users-components";
 
 import { IUser } from "constants/types/user.type";
 
+import simpleBarStyles from "commonStyles/simplebar.module.scss";
 import styles from "./table-users.module.scss";
 
 interface ITableUsers {
@@ -14,7 +15,7 @@ interface ITableUsers {
 
 const TableUsers: FC<ITableUsers> = ({ users, count, isLoading }) => {
   return (
-    <div>
+    <div className={simpleBarStyles.simpleBarArea}>
       <StickyList
         height={600}
         innerElementType={innerElementType}

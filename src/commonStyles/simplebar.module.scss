@@ -1,0 +1,51 @@
+.simpleBarArea :global {
+  .simplebar-content-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .simplebar-content-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .simplebar-scrollbar {
+    &::before {
+      background-color: #dcd8d3;
+    }
+  }
+
+  .simplebar-scrollbar.simplebar-visible::before {
+    top: -1px;
+    opacity: 1;
+  }
+
+  .simplebar-track.simplebar-vertical {
+    width: 10px;
+    margin: 72px 0 10px;
+  }
+
+  .simplebar-track.simplebar-horizontal {
+    z-index: 0;
+    height: 9px;
+    margin: 0 10px;
+  }
+
+  .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+    height: 6px;
+
+    &::before {
+      height: 100%;
+    }
+  }
+
+  .simplebar-track {
+    border-radius: 99px;
+  }
+}
+
+.selectSimpleBar :global {
+  .simplebar-track.simplebar-vertical {
+    width: 10px;
+    margin: 10px 0;
+  }
+}

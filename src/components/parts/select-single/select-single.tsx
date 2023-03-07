@@ -1,9 +1,11 @@
 import { FC, useState, MouseEventHandler, memo, useMemo } from "react";
 import Select, { SingleValue, ActionMeta } from "react-select";
 
-import { IOption, IFilterOption } from "constants/types/form-parts.type";
-import selectStyles from "./custom-select-styles";
+import { MenuList } from "./custom-select-parts";
 
+import { IOption, IFilterOption } from "constants/types/form-parts.type";
+
+import selectStyles from "./custom-select-styles";
 import styles from "./select-single.module.scss";
 
 interface ISelectSingle {
@@ -82,6 +84,7 @@ const SelectSingle: FC<ISelectSingle> = ({
           autoFocus={true}
           maxMenuHeight={200}
           styles={selectStyles}
+          components={{ MenuList }}
           menuPlacement={showAtTop ? "top" : "bottom"}
         />
       )}

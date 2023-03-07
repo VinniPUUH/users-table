@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App";
 
+import "simplebar-react/dist/simplebar.min.css";
 import "./index.css";
 
 const root = ReactDOM.createRoot(

@@ -1,6 +1,25 @@
 .list {
   border-radius: 16px;
   background-color: #13161d;
+
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .stickyRow {

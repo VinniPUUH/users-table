@@ -1,5 +1,6 @@
 import { createContext, forwardRef, CSSProperties } from "react";
 import { FixedSizeList as List } from "react-window";
+import SimpleBar from "simplebar-react";
 import clsx from "clsx";
 
 import styles from "./table-users.module.scss";
@@ -81,7 +82,12 @@ const StickyList = ({
   ...rest
 }: any) => (
   <StickyListContext.Provider
-    value={{ ItemRenderer: children, stickyIndices, users, isLoading }}
+    value={{
+      ItemRenderer: children,
+      stickyIndices,
+      users,
+      isLoading,
+    }}
   >
     {isLoading && (
       <img
@@ -92,9 +98,23 @@ const StickyList = ({
         height={38}
       />
     )}
-    <List itemData={{ ItemRenderer: children, stickyIndices, users }} {...rest}>
-      {ItemWrapper}
-    </List>
+    <SimpleBar style={{ height: 600 }} autoHide={false}>
+      {({ scrollableNodeRef, contentNodeRef }) => (
+        <List
+          itemData={{
+            ItemRenderer: children,
+            stickyIndices,
+            users,
+            contentNodeRef,
+          }}
+          outerRef={scrollableNodeRef}
+          innerRef={contentNodeRef}
+          {...rest}
+        >
+          {ItemWrapper}
+        </List>
+      )}
+    </SimpleBar>
   </StickyListContext.Provider>
 );
 
